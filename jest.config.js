@@ -1,11 +1,17 @@
 module.exports = {
-    testEnvironment: 'jsdom',
-    transform: {
-      '^.+\\.jsx?$': 'babel-jest'
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  globals: {
+    'ts-jest': {
+      tsConfig: '<rootDir>/tsconfig.json',
     },
-    moduleNameMapper: {
-      '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
-    },
-    setupFilesAfterEnv: ['<rootDir>/src/setupTests.js']
-  };
-  
+  },
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'], // (Optional)
+};
