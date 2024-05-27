@@ -9,6 +9,7 @@ function App() {
           Learn React
         </a>
       </p>
+      <h1 data-testid="custom-element">Custom HTML element</h1>
       <button onClick={() => setText('Text after click')}>click me</button>
     </div>
   );
