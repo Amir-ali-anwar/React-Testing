@@ -1,4 +1,6 @@
+import { useState } from "react";
 function App() {
+  const [text, setText] = useState('Initial Text');
   return (
     <div>
       <h1>Hello, Vite + React!</h1>
@@ -7,6 +9,7 @@ function App() {
           Learn React
         </a>
       </p>
+      <button onClick={() => setText('Text after click')}>click me</button>
     </div>
   );
 }
