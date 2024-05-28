@@ -1,14 +1,12 @@
 import { useState } from "react";
 import Landing from "./components/Landing";
-import UserInput from "./components/UserInput";
 function App() {
   const [text, setText] = useState('Initial Text');
   return (
     <div>
       <h1>Hello, Vite + React!</h1>
-      <Landing />
-      <UserInput />
-      <p>
+      {/* <Landing /> */}
+          <p>
         <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
