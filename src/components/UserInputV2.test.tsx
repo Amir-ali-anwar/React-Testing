@@ -20,12 +20,14 @@ test('renders initial text', () => {
   })
 
   // 3. Toggle Text Test
-  // test("button click toggles text",()=>{
-  //   render(<UserInputV2 />);
-  //   const buttonEleemnt= screen.getByRole('button',{
-  //     name:'/Initial Text/i'
-  //   })
-
-  //   expect(buttonEleemnt).toBeInTheDocument()
+  test("button click toggles text",()=>{
+    render(<UserInputV2 />);
+    const buttonElement = screen.getByRole('button', { name: /click me/i });
+      // First click
+    fireEvent.click(buttonElement)
+    let textElement = screen.getByText(/Text after click/i);
+    fireEvent.click(buttonElement);
+    textElement = screen.getByText(/Initial Text/i);  
+    expect(textElement).toBeInTheDocument()
   
-  // })
+  })
