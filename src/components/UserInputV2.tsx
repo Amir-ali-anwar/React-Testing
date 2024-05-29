@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 const UserInputV2 = () => {
-  const [text, setText] = useState("Initial Text");
+  const [text, setText] = useState('Initial Text');
   const [count, setCount] = useState(0);
+
   const handleClick = () => {
-    setText(prevText=> prevText === 'Initial Text' ? 'Text after click' : 'Initial Text')
-    setCount(prevCount=>prevCount+1)
+    setText(prevText => prevText === 'Initial Text' ? 'Text after click' : 'Initial Text');
+    setCount(prevCount => prevCount + 1);
   };
 
   return (
