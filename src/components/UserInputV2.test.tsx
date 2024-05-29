@@ -31,3 +31,27 @@ test('renders initial text', () => {
     expect(textElement).toBeInTheDocument()
   
   })
+
+  // 4. Click Count Test
+  test('click count increments on button click', () => {
+    render(<UserInputV2 />);
+    const buttonElement = screen.getByRole('button', { name: /click me/i });
+    fireEvent.click(buttonElement);
+    const countElement = screen.getByText(/Click count: 1/i);
+    expect(countElement).toBeInTheDocument();
+  })
+
+  test("multiple clicks update text and count correctly", () => {
+    render(<UserInputV2 />);
+    const buttonElement = screen.getByRole("button", { name: /click me/i });
+    // Click the button 3 times
+    fireEvent.click(buttonElement);
+    fireEvent.click(buttonElement);
+    fireEvent.click(buttonElement);
+    const textElement = screen.getByText(/Text after click/i);
+    expect(textElement).toBeInTheDocument();
+  
+    // Check count
+    const countElement = screen.getByText(/Click count: 3/i);
+    expect(countElement).toBeInTheDocument();
+  });
