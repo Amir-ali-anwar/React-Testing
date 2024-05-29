@@ -8,3 +8,10 @@ test("renders initial text", () => {
   const textElement=screen.getByText(/Initial Text/i)
   expect(textElement).toBeInTheDocument()
 });
+
+// 2. Button Click Test
+  test('button click toggles text',()=>{
+    render(<UserInputV2 />);
+    const buttonEleemnt= screen.getByRole('button')
+    expect(buttonEleemnt).toBeInTheDocument()
+  })
